@@ -1,0 +1,45 @@
+#Pastas específicas do projeto
+/vosk_models/
+
+#Arquivos específicos
+como_o_spotify_decide_a_seed_das_musicas.txt
+informacoes.json
+
+#Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.egg
+
+#Ambientes virtuais
+.venv/
+venv/
+env/
+ENV/
+
+#Logs e temporários
+*.log
+*.tmp
+*.swp
+
+#Build e distribuição
+build/
+dist/
+*.spec
+
+#Configurações locais
+*.env
+.env.*
+
+#IDEs e editores
+.idea/
+.vscode/
+*.iml
+
+#Testes
+.coverage
+htmlcov/
+.pytest_cache/
