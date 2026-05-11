@@ -6,14 +6,14 @@ from boca import nome, bemvindo, quemsoueu,falar
 from ouvido import escuta
 import os
 from login import login
+from spotify_falado import tocando_musica
 
 tprint("Inicializado", font="basic")
-
+cliente = login()
 nome()
-comando = escuta()
+usuario = escuta()
+bemvindo(usuario)
 
-print(comando)
-bemvindo(comando)
 while True:
     comando = escuta()
     print(comando)
@@ -22,16 +22,13 @@ while True:
         hotkey("winleft", "d")
 
 
-    elif "cabeça" in comando and "música" in comando and "página inicial" in comando:
+    elif "cabeça" in comando and "música" in comando:
         os.system("spotify")
-        falar("Certo, em qual dispositivo?")
-        #como faço aqui?
-        #tenho que passar a funcao com a musica
-        login(comando)
+        falar(f"Qual música voce quer que eu toque?")
 
-
-
-
+        nome_da_musica = escuta()
+        if nome_da_musica:
+            tocando_musica(cliente, nome_da_musica)
 
 
     elif "quem é você?" in comando:
