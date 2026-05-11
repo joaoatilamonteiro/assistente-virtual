@@ -1,6 +1,6 @@
 ---
-title: Jarvis - Assistente Virtual em Python
-description: Assistente virtual inteligente com reconhecimento de voz e integração com Spotify.
+Jarvis - Assistente Virtual em Python
+Assistente virtual inteligente com reconhecimento de voz e integração com Spotify.
 ---
 
 ## 🚀 Funcionalidades
