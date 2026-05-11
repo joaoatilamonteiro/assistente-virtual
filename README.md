@@ -1,8 +1,7 @@
 ---
-
-# Jarvis - Assistente Virtual em Python
-
-Este projeto é um assistente virtual inteligente capaz de processar comandos de voz localmente para controlar o sistema operacional e gerenciar a reprodução de músicas através da API do Spotify.
+title: Jarvis - Assistente Virtual em Python
+description: Assistente virtual inteligente com reconhecimento de voz e integração com Spotify.
+---
 
 ## 🚀 Funcionalidades
 
