@@ -5,8 +5,7 @@ import json
 from vosk import Model, KaldiRecognizer
 
 
-# Carregar o modelo grande
-model = Model(r"vosk_models/vosk-model-pt-fb-v0.1.1-20220516_2113")
+model = Model(r"vosk_models/vosk-model-small-pt-0.3")
 rec = KaldiRecognizer(model, 16000)
 q = queue.Queue()
 

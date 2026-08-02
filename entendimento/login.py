@@ -1,10 +1,10 @@
 import json
-from spotify_client import auto_login, SCOPES, SpotifyClient
+from musica.spotify_client import auto_login, SCOPES, SpotifyClient
 
 
 def login():
     # 1. Lemos o arquivo de configurações exatamente como no seu main.py
-    with open("informacoes.json", "r", encoding="utf-8") as file:
+    with open("../informacoes.json", "r", encoding="utf-8") as file:
         dados = json.load(file)
 
     print("Iniciando login para o teste...")

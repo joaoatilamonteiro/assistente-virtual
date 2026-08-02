@@ -18,13 +18,21 @@ Assistente virtual inteligente com reconhecimento de voz e integração com Spot
 
 ## 📂 Estrutura do Projeto
 
-* **`cabeca.py`**: O cérebro do assistente. Contém o loop principal que interpreta os comandos recebidos.
-* **`boca.py`**: Gerencia a saída de áudio e as saudações personalizadas baseadas no horário do dia.
-* **`ouvido.py`**: Configuração do microfone e motor de transcrição de voz para texto.
-* **`spotify_client.py`**: Uma biblioteca (wrapper) personalizada que simplifica as requisições para a API do Spotify, tratando inclusive limites de requisição (Rate Limit).
-* **`login.py`**: Gerencia as credenciais e o processo de login para garantir que o assistente tenha permissão de acesso.
-* **`spotify_falado.py`**: Módulo de interface que permite escolher em qual dispositivo o áudio deve ser reproduzido.
+O projeto é modularizado em diretórios lógicos para facilitar a manutenção e escalabilidade:
 
+* **`/entendimento`**: Módulos centrais de processamento e interação com o usuário.
+  * `cabeca.py`: O cérebro do assistente. Contém o loop principal que orquestra e interpreta os comandos.
+  * `boca.py`: Gerencia a saída de áudio e as saudações personalizadas baseadas no horário do dia.
+  * `ouvido.py`: Configuração de entrada de comandos de texto/voz para interação com a IA.
+  * `login.py`: Gerencia as credenciais e o processo de login para garantir as permissões de acesso.
+
+* **`/musica`**: Módulos dedicados à integração com serviços de mídia.
+  * `spotify_client.py`: Wrapper personalizado que simplifica as requisições para a API do Spotify, tratando limites de requisição (Rate Limit).
+  * `spotify_falado.py`: Módulo de interface que permite a escolha e o roteamento de áudio para os dispositivos disponíveis.
+
+* **Arquivos Raiz**:
+  * `informacoes.json`: (Não versionado) Contém as chaves de API privadas.
+  * `como_o_spotify_decide_a_seed_das_musicas.txt`: Documentação sobre o funcionamento do algoritmo.
 ## 🛠️ Pré-requisitos
 
 * Python 3.x

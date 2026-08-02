@@ -1,5 +1,5 @@
-from ouvido import escuta
-from boca import falar
+from entendimento.ouvido import escuta
+from entendimento.boca import falar
 
 def converter_texto(texto):
     dicionario = {"zero":0,
@@ -45,3 +45,4 @@ def tocando_musica(client,musica):
             falar("Comando invalido")
     else:
         falar("Nenhum dispositivo disponivel")
+

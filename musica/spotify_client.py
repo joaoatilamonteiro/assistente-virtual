@@ -1,14 +1,11 @@
 import time
 import urllib.parse
-import json
 import requests
 import webbrowser
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 
 # Carrega configurações
-with open("informacoes.json", "r", encoding="utf-8") as file:
-    config = json.load(file)
 
 SCOPES = ["playlist-read-private",
           "playlist-read-collaborative",
@@ -274,13 +271,25 @@ class controle_player:
         url_pause = "https://api.spotify.com/v1/me/player/pause"
         if device_id:
             url_pause += f"?device_id={device_id}"
-        res = self.client._make_request("PUT0",url_pause)
+        res = self.client._make_request("PUT",url_pause)
 
-        if res.status_code == 204:
+        if res.status_code == 204 or 200:
             print("musica pausada")
 
         else:
             print(f"erro ao pausar a musica\n{res.status_code}")
+
+    def resume (self, device_id=None):
+        url_pause = "https://api.spotify.com/v1/me/player/play"
+        if device_id:
+            url_pause += f"?device_id={device_id}"
+        res = self.client._make_request("PUT",url_pause)
+
+        if res.status_code == 204 or 200:
+            print("música voltando a tocar")
+
+        else:
+            print(f"erro ao voltar a musica\n{res.status_code}")
 
     def proxima_musica(self,device_id=None):
 
@@ -291,7 +300,7 @@ class controle_player:
 
         res = self.client._make_request("POST",url_next)
 
-        if res.status_code == 204:
+        if res.status_code == 204 or 200:
             print("Pulando para a proxima musica")
         else:
             print(f"erro ao avancar {res.status_code}")
@@ -303,7 +312,7 @@ class controle_player:
 
         res = self.client._make_request("POST",url_prev)
 
-        if res.status_code == 204:
+        if res.status_code == 204 or 200:
             print("Voltando para a musica anterior")
         else:
             print(f"erro ao voltar {res.status_code}")
